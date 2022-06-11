@@ -1,0 +1,19 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-secondary
+  .container-fluid
+    |  <a class="navbar-brand" 
+    = link_to "Ostrogan", root_path
+
+    nav-item.dropdown
+      navbarDropdown.dropdown-toggle[role="button" data-bs-toggle="dropdown" aria-expanded="false"]
+        i.fa.fa-user-o[aria-hidden="true"]
+      ul.dropdown-menu.dropdown-menu-end[aria-labelledby="navbarDropdown"]
+        - if user_signed_in?
+          li
+            = link_to 'Профиль', user_path(current_user), class: 'btn btn-light'
+            '
+            = link_to 'Выйти', destroy_user_session_path, :method => :delete, class: 'btn btn-light'
+        - else
+          li
+            = link_to 'Войти', new_user_session_path, class: 'btn btn-light'
+            '
+            = link_to 'Зарегистрироваться', new_user_registration_path, class: 'btn btn-light'
