@@ -1,12 +1,15 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-secondary
+nav.navbar.navbar-expand-lg.navbar-light[style="background-color: #e3f2fd;"]
   .container-fluid
     |  <a class="navbar-brand" 
     = link_to "Ostrogan", root_path
-
-    nav-item.dropdown
-      navbarDropdown.dropdown-toggle[role="button" data-bs-toggle="dropdown" aria-expanded="false"]
+    |  <a class="navbar-nav" 
+    = link_to "News", news_index_path
+    
+    .dropdown
+      //<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle[type="button" data-bs-toggle="dropdown" aria-expanded="false"]
         i.fa.fa-user-o[aria-hidden="true"]
-      ul.dropdown-menu.dropdown-menu-end[aria-labelledby="navbarDropdown"]
+      ul.dropdown-menu.dropdown-menu-end[aria-labelledby="dropdownMenuButton1"]
         - if user_signed_in?
           li
             = link_to 'Профиль', user_path(current_user), class: 'btn btn-light'
