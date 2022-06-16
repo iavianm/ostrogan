@@ -1,11 +1,11 @@
 p style="color: green" = notice
 
-h1 News
+h1 Новости
+
+p= link_to "Добавить новость", new_news_path, class: 'btn btn-success'
 
 #news
   - @news.each do |news|
     == render news
     p
-      = link_to "Show this news", news
-
-= link_to "New news", new_news_path
+      = link_to "Открыть", news, class: 'btn btn-primary'

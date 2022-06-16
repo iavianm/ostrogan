@@ -2,9 +2,9 @@ p style="color: green" = notice
 
 == render @news
 
-div
-  => link_to "Edit this news", edit_news_path(@news)
-  '|
-  =< link_to "Back to news", news_index_path
-
-  = button_to "Destroy this news", @news, method: :delete
+.active
+  = link_to "Edit this news", edit_news_path(@news), class: 'btn btn-success'
+  |  |  
+  = link_to "Back to news", news_index_path, class: 'btn btn-secondary'
+  |  |  
+  = link_to "Destroy this news", news_path(@news), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger'

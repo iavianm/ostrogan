@@ -1,15 +1,13 @@
+p
 h1 Home#index
 
 #news
   .row
-    .col
-      - n = @news.last
-      h3 = n.title
-      p = n.body
-      p = link_to "Show this news", n
-    .col 
-      - n = @news[@news.size - 2]
-      h3 = n.title
-      p = n.body
-      p = link_to "Show this news", n
+    .row.align-items-start
+    - @news.each do |n|
+      .col
+        .bg-light.bg-gradient
+          h3 = n.title
+          p = n.body
+          p = link_to "Show this news", n, class: 'btn btn-success'
   p

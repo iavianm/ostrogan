@@ -1,14 +1,22 @@
+/ nav.navbar.navbar-expand-lg.navbar-light[style="background-color: #e3f2fd;"]
 nav.navbar.navbar-expand-lg.navbar-light[style="background-color: #e3f2fd;"]
   .container-fluid
-    |  <a class="navbar-brand" 
-    = link_to "Ostrogan", root_path
-    |  <a class="navbar-nav" 
-    = link_to "News", news_index_path
     
+    a.navbar-brand[href="/"]
+      i.fa.fa-home
+    button.navbar-toggler[type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link[aria-current="page" href="/"]
+            | Home
+        li.nav-item
+          a.nav-link[aria-current="page" href="/news"]
+            | News
     .dropdown
-      //<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle[type="button" data-bs-toggle="dropdown" aria-expanded="false"]
-        i.fa.fa-user-o[aria-hidden="true"]
+      button#dropdownMenuButton1.btn.dropdown-toggle[type="button" data-bs-toggle="dropdown" aria-expanded="false"]
+        i.fa-solid.fa-user
       ul.dropdown-menu.dropdown-menu-end[aria-labelledby="dropdownMenuButton1"]
         - if user_signed_in?
           li

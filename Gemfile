@@ -79,4 +79,4 @@ end
 gem "slim-rails"
 gem "devise"
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
-gem "font-awesome-rails"
+# gem "font-awesome-rails"

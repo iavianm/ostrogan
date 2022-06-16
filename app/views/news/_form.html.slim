@@ -11,7 +11,8 @@
     = f.text_field :title, class: 'form-control'
   .mb-3
     = f.label :Текст
-    = f.text_area :body, class: 'form-control'
+    = f.text_area :body, rows: 10, class: 'form-control'
   .actions
     = f.submit 'Сохранить', class: 'btn btn-success'
+    |  
     = link_to 'Вернуться', :back, class: 'btn btn-secondary'
